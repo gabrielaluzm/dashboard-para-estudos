@@ -1,0 +1,123 @@
+/* Fontes personalizadas */
+h1,
+h2,
+h3 {
+  font-family: "Jersey 25", sans-serif;
+  letter-spacing: 1px;
+}
+
+body,
+.main,
+.sidebar,
+ul,
+li,
+a,
+button,
+textarea,
+input,
+.save-btn,
+.export-btn {
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background: #feedff;
+}
+header {
+  background: #8377d1;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+.sidebar {
+  width: 220px;
+  background: #6d5a72;
+  color: #feedff;
+  height: 100vh;
+  padding-top: 70px;
+  position: fixed;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar ul li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #feedff;
+}
+.sidebar ul li:hover {
+  background: #8377d1;
+}
+.main {
+  margin-left: 240px;
+  padding: 120px 20px 20px 20px;
+  flex: 1;
+}
+
+.main h2,
+h3 {
+  color: #4e4075;
+}
+
+.main ul li a {
+  color: #6d5a72;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.main ul li a:hover {
+  color: #8377d1;
+  text-decoration: underline;
+}
+
+.progress-container {
+  background: #feedff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px auto;
+  width: 80%;
+}
+.progress-bar {
+  height: 20px;
+  background: #6d5a72;
+  width: 0%;
+}
+.task-list input {
+  margin-right: 10px;
+}
+.timer {
+  margin: 20px 0;
+}
+
+.notes {
+  width: 90%;
+  height: 150px;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.save-btn,
+.export-btn {
+  background: #48be6c;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 5px;
+  display: inline-block;
+  border-radius: 5px;
+}
+.export-btn {
+  background: #70c5c1;
+  margin-left: 10px;
+  border-radius: 5px;
+}

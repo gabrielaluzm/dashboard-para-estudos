@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard de Estudos - JS, React, Node</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Plano Intensivo de Estudos: JavaScript, React, Node.js</h1>
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+    </header>
+
+    <div class="sidebar">
+      <ul>
+        <li onclick="loadWeek(1)">Semana 1 - JS Básico</li>
+        <li onclick="loadWeek(2)">Semana 2 - JS Avançado</li>
+        <li onclick="loadWeek(3)">Semana 3 - React</li>
+        <li onclick="loadWeek(4)">Semana 4 - Node.js</li>
+      </ul>
+    </div>
+
+    <div class="main">
+      <h2 id="weekTitle">Selecione uma semana</h2>
+      <div class="task-list" id="taskList"></div>
+
+      <h3>Links Úteis</h3>
+      <ul>
+        <li>
+          <a
+            href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"
+            target="_blank"
+            >MDN JavaScript</a
+          >
+        </li>
+        <li>
+          <a href="https://react.dev/learn" target="_blank">React Docs</a>
+        </li>
+        <li>
+          <a href="https://nodejs.org/en/docs" target="_blank">Node.js Docs</a>
+        </li>
+      </ul>
+
+      <h3>Sites de estudo</h3>
+      <ul>
+        <li>
+          <a href="https://www.freecodecamp.org/portuguese/" target="_blank"
+            >FreeCodeCamp</a
+          >
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>
+        </li>
+        <li>
+          <a href="https://www.codecademy.com/" target="_blank">Codecademy</a>
+        </li>
+      </ul>
+
+      <h3>Timer Pomodoro</h3>
+      <div class="timer">
+        <span id="timerDisplay">25:00</span>
+        <button onclick="iniciarTimer()">Iniciar</button>
+        <button onclick="resetarTimer()">Resetar</button>
+      </div>
+
+      <h3>Anotações</h3>
+      <textarea
+        id="notes"
+        class="notes"
+        placeholder="Escreva suas anotações aqui..."
+      ></textarea>
+      <button class="save-btn" onclick="saveNotes()">Salvar Anotações</button>
+      <button class="export-btn" onclick="exportNotesPDF()">
+        Exportar para PDF
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
