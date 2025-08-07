@@ -2,6 +2,10 @@
 
 Bem-vindo ao **Dashboard-Estudos**! Este projeto tem como objetivo ajudar você a organizar, acompanhar e turbinar sua rotina de estudos de maneira visual e interativa. 
 
+<img width="1154" height="745" alt="image" src="https://github.com/user-attachments/assets/affb8a4c-43a5-4944-9fbf-0298300c58c2" />
+
+<img width="1140" height="746" alt="image" src="https://github.com/user-attachments/assets/2c90afc7-a76b-4181-909f-d75558f10853" />
+
 ## 🚀 Funcionalidades
 
 - 🏆 Visualize seu progresso nos estudos
