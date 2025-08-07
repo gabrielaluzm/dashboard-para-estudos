@@ -2,6 +2,10 @@
 
 Bem-vindo ao **Dashboard de Estudos**! Um projeto completo para organizar e acompanhar seu plano intensivo de estudos em JavaScript, React e Node.js de forma visual e interativa.
 
+<img width="1154" height="745" alt="image" src="https://github.com/user-attachments/assets/affb8a4c-43a5-4944-9fbf-0298300c58c2" />
+
+<img width="1140" height="746" alt="image" src="https://github.com/user-attachments/assets/2c90afc7-a76b-4181-909f-d75558f10853" />
+
 ## 🚀 Funcionalidades
 
 - ✅ **Plano de 4 Semanas** estruturado para JS, React e Node.js
