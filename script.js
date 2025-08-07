@@ -30,6 +30,13 @@ const semanas = {
 };
 
 function carregarSemana(num) {
+  // Oculta o cronograma e mostra o conteúdo das semanas
+  document.getElementById("cronograma").style.display = "none";
+  document.getElementById("listaTarefas").style.display = "block";
+
+  // Salva a semana atual no localStorage
+  localStorage.setItem("semanaAtual", num);
+
   document.getElementById("tituloSemana").innerText = "Semana " + num;
   const listaTarefas = document.getElementById("listaTarefas");
   listaTarefas.innerHTML = "";
@@ -43,21 +50,55 @@ function carregarSemana(num) {
   atualizarProgresso();
 }
 
+function mostrarCronograma() {
+  // Oculta o conteúdo das semanas e mostra o cronograma
+  document.getElementById("listaTarefas").style.display = "none";
+  document.getElementById("cronograma").style.display = "block";
+  document.getElementById("tituloSemana").innerText = "";
+}
+
 function salvarTarefa(semana, indice, checked) {
   localStorage.setItem(`semana${semana}-tarefa${indice}`, checked);
   atualizarProgresso();
 }
 
 function atualizarProgresso() {
-  const todasTarefas = Object.keys(localStorage).filter((key) =>
-    key.includes("tarefa")
-  ).length;
-  const tarefasFeitas = Object.keys(localStorage).filter(
-    (key) => key.includes("tarefa") && localStorage.getItem(key) === "true"
-  ).length;
+  // Calcula o total correto de tarefas (todas as semanas)
+  let totalTarefas = 0;
+  let tarefasConcluidas = 0;
+
+  // Conta tarefas de cada semana
+  for (let semana = 1; semana <= 4; semana++) {
+    const tarefasDaSemana = semanas[semana];
+    totalTarefas += tarefasDaSemana.length;
+
+    // Conta quantas tarefas desta semana estão concluídas
+    for (let indice = 0; indice < tarefasDaSemana.length; indice++) {
+      const chave = `semana${semana}-tarefa${indice}`;
+      if (localStorage.getItem(chave) === "true") {
+        tarefasConcluidas++;
+      }
+    }
+  }
+
+  // Calcula a porcentagem correta
   const porcentagem =
-    todasTarefas > 0 ? (tarefasFeitas / todasTarefas) * 100 : 0;
-  document.getElementById("barraProgresso").style.width = porcentagem + "%";
+    totalTarefas > 0 ? (tarefasConcluidas / totalTarefas) * 100 : 0;
+  document.getElementById("progressBar").style.width = porcentagem + "%";
+
+  console.log(
+    `Progresso: ${tarefasConcluidas}/${totalTarefas} = ${porcentagem.toFixed(
+      1
+    )}%`
+  );
+}
+
+// Função para carregar automaticamente a última semana acessada
+function carregarUltimaSemana() {
+  const ultimaSemana = localStorage.getItem("semanaAtual");
+  if (ultimaSemana) {
+    carregarSemana(parseInt(ultimaSemana));
+  }
 }
 
 // Timer Pomodoro
@@ -83,7 +124,7 @@ function iniciarTimer() {
 
 function resetarTimer() {
   clearInterval(timer);
-  tempoRestante = 30 * 60;
+  tempoRestante = 25 * 60;
   document.getElementById("displayTimer").innerText = "25:00";
 }
 
@@ -111,4 +152,6 @@ function exportarNotasPDF() {
   win.print();
 }
 
+// Inicializa o progresso e carrega a última semana
 atualizarProgresso();
+carregarUltimaSemana();

@@ -20,16 +20,63 @@
 
     <div class="sidebar">
       <ul>
-        <li onclick="loadWeek(1)">Semana 1 - JS Básico</li>
-        <li onclick="loadWeek(2)">Semana 2 - JS Avançado</li>
-        <li onclick="loadWeek(3)">Semana 3 - React</li>
-        <li onclick="loadWeek(4)">Semana 4 - Node.js</li>
+        <li onclick="mostrarCronograma()">📅 Cronograma Diário</li>
+        <li onclick="carregarSemana(1)">Semana 1 - JS Básico</li>
+        <li onclick="carregarSemana(2)">Semana 2 - JS Avançado</li>
+        <li onclick="carregarSemana(3)">Semana 3 - React</li>
+        <li onclick="carregarSemana(4)">Semana 4 - Node.js</li>
       </ul>
     </div>
 
     <div class="main">
-      <h2 id="weekTitle">Selecione uma semana</h2>
-      <div class="task-list" id="taskList"></div>
+      <h2 id="tituloSemana">Selecione uma semana</h2>
+      <div class="task-list" id="listaTarefas"></div>
+
+      <div id="cronograma" style="display: none">
+        <h2>📅 Cronograma Diário (8h/dia)</h2>
+        <table class="cronograma-table">
+          <thead>
+            <tr>
+              <th>Horário</th>
+              <th>Atividade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>08:00 - 08:50</td>
+              <td>Teoria</td>
+            </tr>
+            <tr>
+              <td>09:00 - 09:50</td>
+              <td>Exercícios práticos</td>
+            </tr>
+            <tr>
+              <td>10:00 - 10:50</td>
+              <td>Mini-projetos</td>
+            </tr>
+            <tr>
+              <td>11:00 - 12:00</td>
+              <td>Documentação oficial</td>
+            </tr>
+            <tr>
+              <td>12:00 - 13:00</td>
+              <td>Almoço</td>
+            </tr>
+            <tr>
+              <td>13:00 - 15:00</td>
+              <td>Projeto do dia</td>
+            </tr>
+            <tr>
+              <td>15:00 - 15:15</td>
+              <td>Pausa</td>
+            </tr>
+            <tr>
+              <td>15:15 - 17:30</td>
+              <td>Desafios + Revisão</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <h3>Links Úteis</h3>
       <ul>
@@ -51,6 +98,15 @@
       <h3>Sites de estudo</h3>
       <ul>
         <li>
+          <a href="https://www.alura.com.br/" target="_blank">Alura</a>
+        </li>
+        <li>
+          <a href="https://www.udemy.com/" target="_blank">Udemy</a>
+        </li>
+        <li>
+          <a href="https://www.codedex.io/home" target="_blank">Codédex</a>
+        </li>
+        <li>
           <a href="https://www.freecodecamp.org/portuguese/" target="_blank"
             >FreeCodeCamp</a
           >
@@ -65,19 +121,19 @@
 
       <h3>Timer Pomodoro</h3>
       <div class="timer">
-        <span id="timerDisplay">25:00</span>
+        <span id="displayTimer">25:00</span>
         <button onclick="iniciarTimer()">Iniciar</button>
         <button onclick="resetarTimer()">Resetar</button>
       </div>
 
       <h3>Anotações</h3>
       <textarea
-        id="notes"
+        id="notas"
         class="notes"
         placeholder="Escreva suas anotações aqui..."
       ></textarea>
-      <button class="save-btn" onclick="saveNotes()">Salvar Anotações</button>
-      <button class="export-btn" onclick="exportNotesPDF()">
+      <button class="save-btn" onclick="salvarNotas()">Salvar Anotações</button>
+      <button class="export-btn" onclick="exportarNotasPDF()">
         Exportar para PDF
       </button>
     </div>
