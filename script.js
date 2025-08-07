@@ -144,6 +144,36 @@ function exportarNotasPDF() {
   win.print();
 }
 
+// Dark Mode
+function toggleDarkMode() {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  const targetTheme = currentTheme === "dark" ? "light" : "dark";
+
+  document.documentElement.setAttribute("data-theme", targetTheme);
+
+  // Mudar o ícone do botão
+  const button = document.querySelector(".dark-mode-toggle");
+  button.innerHTML = targetTheme === "dark" ? "☀️" : "🌙";
+
+  // Salvar preferência no localStorage
+  localStorage.setItem("theme", targetTheme);
+}
+
+// Carregar tema salvo ao inicializar
+function carregarTema() {
+  const savedTheme = localStorage.getItem("theme") || "light";
+  document.documentElement.setAttribute("data-theme", savedTheme);
+
+  const button = document.querySelector(".dark-mode-toggle");
+  button.innerHTML = savedTheme === "dark" ? "☀️" : "🌙";
+}
+
+// Inicializar tema quando a página carregar
+document.addEventListener("DOMContentLoaded", function () {
+  carregarTema();
+  carregarNotas(); // função existente
+});
+
 // Funções para o menu mobile
 function toggleMenu() {
   const sidebar = document.getElementById("sidebar");

@@ -157,6 +157,138 @@ h3 {
   border-radius: 5px;
 }
 
+/* Botão Dark Mode */
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 70px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1002;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark Mode Styles */
+:root {
+  --bg-color: #f5f5f5;
+  --text-color: #333;
+  --sidebar-bg: #7f9479;
+  --main-bg: white;
+  --border-color: #ddd;
+  --primary-color: #47524d;
+}
+
+[data-theme="dark"] {
+  --bg-color: #222423;
+  --text-color: #e0e0e0;
+  --sidebar-bg: #292e2c;
+  --main-bg: #292e2c;
+  --border-color: #444;
+  --primary-color: #7f9479;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main {
+  background-color: var(--main-bg);
+  color: var(--text-color);
+}
+
+.sidebar {
+  background-color: var(--sidebar-bg);
+}
+
+.cronograma-table {
+  background-color: #363a38;
+  border: 1px solid var(--border-color);
+}
+
+.cronograma-table th,
+.cronograma-table td {
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+.cronograma-table th {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+[data-theme="dark"] .spotify-sidebar {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .spotify-sidebar h4 {
+  color: #e0e0e0;
+}
+
+.main ul li a {
+  color: #859281;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.main ul li a:hover {
+  color: #618684;
+  text-decoration: underline;
+}
+
+/* Spotify Sidebar */
+
+.spotify-sidebar {
+  margin-top: 30px;
+  padding: 15px 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.spotify-sidebar h4 {
+  color: #ecf0f1;
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.spotify-container-small {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.spotify-container-small iframe {
+  display: block;
+  width: 100%;
+}
+
+/* Timer e outros elementos */
+.timer {
+  background-color: var(--main-bg);
+  border: 1px solid var(--border-color);
+}
+
+.notes {
+  background-color: var(--main-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
 /* Responsividade */
 
 @media (max-width: 1136px) {
@@ -301,5 +433,48 @@ h3 {
 
   .overlay {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .spotify-sidebar {
+    display: none;
+  }
+}
+
+/* Dark mode no desktop */
+@media (min-width: 769px) {
+  .dark-mode-toggle {
+    top: 20px;
+    right: 20px;
+    background: var(--primary-color);
+  }
+}
+
+/* Dark mode no mobile - canto inferior direito */
+@media (max-width: 768px) {
+  .dark-mode-toggle {
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+    background: #7f9479;
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  .spotify-sidebar {
+    display: none;
+  }
+}
+
+/* Para telas muito pequenas */
+@media (max-width: 480px) {
+  .dark-mode-toggle {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
   }
 }
