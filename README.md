@@ -2,9 +2,12 @@
 
 Bem-vindo ao **Dashboard de Estudos**! Um projeto completo para organizar e acompanhar seu plano intensivo de estudos em JavaScript, React e Node.js de forma visual e interativa.
 
-<img width="1154" height="745" alt="image" src="https://github.com/user-attachments/assets/affb8a4c-43a5-4944-9fbf-0298300c58c2" />
+<img width="1239" height="747" alt="image" src="https://github.com/user-attachments/assets/061ad9fd-cebe-4bc9-b200-7cd6b35af843" />
+<img width="1245" height="748" alt="image" src="https://github.com/user-attachments/assets/26c85ceb-0071-4290-9a08-e327343d9b3f" />
+<img width="330" height="650" alt="image" src="https://github.com/user-attachments/assets/6e17e06b-aeea-4fd7-b211-6a0ac07b70a8" />
+<img width="328" height="650" alt="image" src="https://github.com/user-attachments/assets/6b1de077-236d-4d1f-91d6-3174b3639cc5" />
+<img width="328" height="650" alt="image" src="https://github.com/user-attachments/assets/ffdb461c-6632-483d-a09f-686acbbf1c8e" />
 
-<img width="1140" height="746" alt="image" src="https://github.com/user-attachments/assets/2c90afc7-a76b-4181-909f-d75558f10853" />
 
 ## 🚀 Funcionalidades
 
