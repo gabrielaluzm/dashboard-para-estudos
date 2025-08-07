@@ -30,11 +30,9 @@ const semanas = {
 };
 
 function carregarSemana(num) {
-  // Oculta o cronograma e mostra o conteúdo das semanas
   document.getElementById("cronograma").style.display = "none";
   document.getElementById("listaTarefas").style.display = "block";
 
-  // Salva a semana atual no localStorage
   localStorage.setItem("semanaAtual", num);
 
   document.getElementById("tituloSemana").innerText = "Semana " + num;
@@ -51,7 +49,6 @@ function carregarSemana(num) {
 }
 
 function mostrarCronograma() {
-  // Oculta o conteúdo das semanas e mostra o cronograma
   document.getElementById("listaTarefas").style.display = "none";
   document.getElementById("cronograma").style.display = "block";
   document.getElementById("tituloSemana").innerText = "";
@@ -63,16 +60,13 @@ function salvarTarefa(semana, indice, checked) {
 }
 
 function atualizarProgresso() {
-  // Calcula o total correto de tarefas (todas as semanas)
   let totalTarefas = 0;
   let tarefasConcluidas = 0;
 
-  // Conta tarefas de cada semana
   for (let semana = 1; semana <= 4; semana++) {
     const tarefasDaSemana = semanas[semana];
     totalTarefas += tarefasDaSemana.length;
 
-    // Conta quantas tarefas desta semana estão concluídas
     for (let indice = 0; indice < tarefasDaSemana.length; indice++) {
       const chave = `semana${semana}-tarefa${indice}`;
       if (localStorage.getItem(chave) === "true") {
@@ -81,7 +75,6 @@ function atualizarProgresso() {
     }
   }
 
-  // Calcula a porcentagem correta
   const porcentagem =
     totalTarefas > 0 ? (tarefasConcluidas / totalTarefas) * 100 : 0;
   document.getElementById("progressBar").style.width = porcentagem + "%";
@@ -93,7 +86,6 @@ function atualizarProgresso() {
   );
 }
 
-// Função para carregar automaticamente a última semana acessada
 function carregarUltimaSemana() {
   const ultimaSemana = localStorage.getItem("semanaAtual");
   if (ultimaSemana) {
@@ -152,6 +144,34 @@ function exportarNotasPDF() {
   win.print();
 }
 
-// Inicializa o progresso e carrega a última semana
+// Funções para o menu mobile
+function toggleMenu() {
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.querySelector(".overlay");
+
+  sidebar.classList.toggle("open");
+  overlay.classList.toggle("active");
+}
+
+function closeMenu() {
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.querySelector(".overlay");
+
+  sidebar.classList.remove("open");
+  overlay.classList.remove("active");
+}
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 768) {
+    closeMenu();
+  }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeMenu();
+  }
+});
+
 atualizarProgresso();
 carregarUltimaSemana();

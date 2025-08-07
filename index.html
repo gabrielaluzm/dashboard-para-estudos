@@ -11,20 +11,22 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <div class="overlay" onclick="closeMenu()"></div>
     <header>
-      <h1>Plano Intensivo de Estudos: JavaScript, React, Node.js</h1>
+      <h1>Plano Intensivo de Estudos</h1>
       <div class="progress-container">
         <div class="progress-bar" id="progressBar"></div>
       </div>
     </header>
 
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
       <ul>
-        <li onclick="mostrarCronograma()">📅 Cronograma Diário</li>
-        <li onclick="carregarSemana(1)">Semana 1 - JS Básico</li>
-        <li onclick="carregarSemana(2)">Semana 2 - JS Avançado</li>
-        <li onclick="carregarSemana(3)">Semana 3 - React</li>
-        <li onclick="carregarSemana(4)">Semana 4 - Node.js</li>
+        <li onclick="mostrarCronograma(); closeMenu()">📅 Cronograma Diário</li>
+        <li onclick="carregarSemana(1); closeMenu()">Semana 1 - JS Básico</li>
+        <li onclick="carregarSemana(2); closeMenu()">Semana 2 - JS Avançado</li>
+        <li onclick="carregarSemana(3); closeMenu()">Semana 3 - React</li>
+        <li onclick="carregarSemana(4); closeMenu()">Semana 4 - Node.js</li>
       </ul>
     </div>
 
