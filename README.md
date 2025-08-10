@@ -26,12 +26,12 @@ Bem-vindo ao **Dashboard de Estudos**! Um projeto completo para organizar e acom
 
 Este projeto foi desenvolvido com tecnologias web puras:
 
-- **HTML5** 📄 (estrutura)
-- **CSS3** 🎨 (estilização e responsividade)
-- **JavaScript ES6+** ⚡ (funcionalidades interativas)
-- **LocalStorage** 💾 (persistência de dados)
-- **Spotify Web Player** 🎵 (integração musical)
-- **CSS Variables** 🎯 (sistema de temas)
+- **HTML5** 📄
+- **CSS3** 🎨
+- **JavaScript ES6+** ⚡
+- **LocalStorage** 💾
+- **Spotify Web Player** 🎵
+- **CSS Variables** 🎯
 
 ## 🙋‍♀️ Autora
 
